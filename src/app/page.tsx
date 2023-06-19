@@ -57,14 +57,14 @@ export default function Home() {
       </div>
       <div className="flex justify-center gap-2">
         <button
-          className="rounded-full bg-indigo-300 h-16 w-16"
+          className="rounded-full bg-indigo-300 hover:bg-indigo-400 transition-all h-16 w-16"
           onClick={handlePause}
         >
           {pause ? 'Start' : 'Stop'}
         </button>
         {pause && (
           <button
-            className="rounded-full bg-indigo-300 h-16 w-16"
+            className="rounded-full bg-red-300 hover:bg-red-400 transition-all h-16 w-16"
             onClick={handleReset}
           >
             Reset
