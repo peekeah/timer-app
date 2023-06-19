@@ -8,11 +8,11 @@ export default function Home() {
     m: 1,
     s: 1,
   })
-  const [pause, setPause] = useState(false)
+  const [pause, setPause] = useState(true)
 
   useEffect(() => {
     if (m === 0 && s === 0) {
-      return
+      return setPause(() => true)
     }
     if (s === 0) {
       return setTime(() => ({ m: m - 1, s: 59 }))
@@ -26,6 +26,7 @@ export default function Home() {
   }, [m, s, pause])
 
   const handlePause = () => {
+    console.log(pause)
     setPause(() => !pause)
   }
 
